@@ -9,5 +9,5 @@
 50.times { Fabricate(:topic) }
 
 30.times do |i|
-  User.find(i + rand(3)).topics << Topic.find(i + rand(3))
+  User.find(i + rand(5)+1).topics << Topic.find(i + rand(5)+1)
 end
