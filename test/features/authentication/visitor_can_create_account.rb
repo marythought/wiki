@@ -15,7 +15,7 @@ feature "Authentication::CanCreateAccount" do
   end
 
   scenario "without a valid formatted email" do
-    fill_in 'Email', with: "user@example" # add the regex of unacceptable email formats
+    fill_in 'Email', with: "user@example"
     fill_in 'Password', with: "password"
     fill_in 'Password confirmation', with: "password"
     click_button('Sign up')

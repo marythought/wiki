@@ -49,15 +49,15 @@ class TopicsController < ApplicationController
 
   private
     # Use callbacks to share common setup or constraints between actions.
-    def set_topic
-      @topic = Topic.find(params[:id])
-    end
+  def set_topic
+    @topic = Topic.find(params[:id])
+  end
 
-    def set_user
-      @user = current_user
-    end
+  def set_user
+    @user = current_user
+  end
 
-    def topic_params
-      params.require(:topic).permit(:title, :body)
-    end
+  def topic_params
+    params.require(:topic).permit(:title, :body)
+  end
 end

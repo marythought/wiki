@@ -1,27 +1,20 @@
 require "test_helper"
 
 feature "Topics::EditingTopics" do
-  scenario "As an author, I want to update articles so that I can fix typos." do
-    sign_in(:author)
-    article = articles(:one)
-    visit article_path(article.id)
+  scenario "Users can update topics." do
+    sign_in(:one)
+    topic = topics(:one)
+    visit topic_path(topic.id)
     click_link('Edit')
     fill_in "Title", with: "New edit title"
     fill_in "Body", with: "New body text"
     click_button "Update Topic"
     page.must_have_content "New edit title"
-    page.wont_have_content articles(:published).body
   end
 
-  scenario "users can update articles" do
-    sign_in(:user)
-    article = articles(:one)
-    visit article_path(article.id)
-    click_link('Edit')
-    fill_in "Title", with: "New edit title"
-    fill_in "Body", with: "New body text"
-    click_button "Update Topic"
-    page.must_have_content "New edit title"
-    page.wont_have_content articles(:published).body
+  scenario "visitor cannot update topics" do
+    visit root_path
+    page.find("tbody tr:last").click_on "Edit"
+    page.must_have_content "You need to sign in or sign up before continuing."
   end
 end

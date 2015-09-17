@@ -2,9 +2,9 @@
 # http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
-  title: MyString
-  body: MyText
+  title: Hillman City Location 1
+  body: First homesteaded by M.D. Woodin in 1863 Hillman City as a community originated in the 1890s with a stop on the Rainier Valley Streetcar line as its nucleus. The neighborhood was named after Clarence Dayton "C.D." Hillman.
 
 two:
-  title: MyString
-  body: MyText
+  title: Hillman City Location 2
+  body: The approximate borders of the neighborhood are South Dawson Street to the north South Graham Street to the south Martin Luther King Jr. Way South to the west and 48th Avenue South to the east.

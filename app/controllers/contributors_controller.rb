@@ -1,5 +1,4 @@
 class ContributorsController < ApplicationController
-
   def index
     @contributors = User.all
   end
@@ -8,5 +7,4 @@ class ContributorsController < ApplicationController
     @contributor = User.find(params[:id])
     @topics = @contributor.topics
   end
-
 end
