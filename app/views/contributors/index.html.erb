@@ -1,9 +1,11 @@
 <h1>List of Wiki Contributors</h1>
 
 <% @contributors.each do |contributor| %>
+  <% if contributor.topics.count > 0 %>
   <ul>
     <li><%= link_to contributor.name, contributor_path(contributor) %></li>
   </ul>
+  <% end %>
 <% end %>
 
 <%= link_to 'Back', topics_path %>

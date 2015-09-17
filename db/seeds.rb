@@ -5,3 +5,9 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+50.times { Fabricate(:user) }
+50.times { Fabricate(:topic) }
+
+30.times do |i|
+  User.find(i + rand(3)).topics << Topic.find(i + rand(3))
+end
