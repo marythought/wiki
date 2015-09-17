@@ -1,9 +1,24 @@
 require "test_helper"
 
-feature "Topic::DeletingTopics" do
-  scenario "the test is sound" do
-    visit root_path
-    page.must_have_content "Hello World"
-    page.wont_have_content "Goobye All!"
+feature "Articles::DeletingArticles" do
+  scenario "editor can delete a article" do
+    sign_in(:editor)
+    Article.create(title: "Becoming a Fode Cellow", body: "Means striving.")
+    number_of_articles = Article.all.count
+    visit articles_path
+    page.find("tbody tr:last").click_on "Destroy"
+    page.wont_have_content "Fode Cellow"
+    assert_equal Article.all.count, number_of_articles - 1
+  end
+
+  scenario "authors cannot delete an article" do
+    sign_in(:author)
+    visit articles_path
+    page.wont_have_content "Destroy"
+  end
+
+  scenario "users cannot delete an article" do
+    visit articles_path
+    page.wont_have_content "Destroy"
   end
 end

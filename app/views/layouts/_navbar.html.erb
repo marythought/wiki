@@ -1,0 +1,23 @@
+<div class="row">
+  <div class="large-12 columns">
+      <% if user_signed_in? %>
+        <p>logged in as <%= current_user.email %> |
+        <%= link_to 'Log out', destroy_user_session_path, method: :delete, data: { confirm: 'Are you sure?' } %>
+      <% else %>
+        <%= link_to 'Sign up', new_user_registration_path %> | <%= link_to 'Log in', new_user_session_path %>
+      <% end %>
+  </div>
+</div>
+
+<div class="row">
+  <div class="large-12 columns">
+    <div class="nav-bar right">
+     <ul class="button-group">
+       <li><a href="/" class="button">Browse Topics</a></li>
+       <li><a href="/contributors" class="button">Browse Contributors</a></li>
+      </ul>
+    </div>
+    <h1>Welcome to the Hillman City Wiki</h1>
+    <hr/>
+  </div>
+</div>

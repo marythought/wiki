@@ -1,0 +1,9 @@
+<h1>List of Wiki Contributors</h1>
+
+<% @contributors.each do |contributor| %>
+  <ul>
+    <li><%= link_to contributor.name, contributor_path(contributor) %></li>
+  </ul>
+<% end %>
+
+<%= link_to 'Back', topics_path %>

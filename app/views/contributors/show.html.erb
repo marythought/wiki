@@ -1,0 +1,10 @@
+<h1><%= @contributor.name %></h1>
+
+<p>Wow! Check out these great wiki topics <%= @contributor.name %> has contributed to. Awesome! </p>
+<% @topics.each do |topic| %>
+<ul>
+  <li><%= link_to topic.title, topic %></li>
+</ul>
+<% end %>
+
+<%= link_to 'Back', topics_path %>

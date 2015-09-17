@@ -1,0 +1,21 @@
+<p>
+  <strong>Title:</strong>
+  <%= @topic.title %>
+</p>
+
+<p>
+  <strong>Body:</strong>
+  <%= @topic.body %>
+</p>
+
+<p>
+  <strong>Contributors:</strong>
+  <% @contributors.each do |contributor| %>
+    <ul>
+      <li><%= link_to contributor.name, contributor_path(contributor) %></li>
+    </ul>
+  <% end %>
+</p>
+
+<%= link_to 'Edit', edit_topic_path(@topic) %> |
+<%= link_to 'Back', topics_path %>
