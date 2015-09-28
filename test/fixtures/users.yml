@@ -1,0 +1,9 @@
+one:
+  email: user@example.com
+  name: Wiki user
+  encrypted_password: <%= User.new.send(:password_digest, 'password') %>
+
+two:
+  email: user2@example.com
+  name: Wiki Master
+  encrypted_password: <%= User.new.send(:password_digest, 'password') %>
