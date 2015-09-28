@@ -35,7 +35,7 @@ class TopicsController < ApplicationController
     if @topic.update(topic_params)
       flash[:success] = "Topic updated"
       redirect_to @topic
-      @topic.users << @user
+      @topic.users << @user unless @topic.users.include?(@user)
     else
       flash[:notice] = "Topic could not be updated"
       render :edit
