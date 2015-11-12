@@ -1,0 +1,14 @@
+MiniTest
+
+You will use EmailSpec in your tests the same way you use it in your specs. The only difference is the use of MiniTest's must instead of Rspec's should:
+
+email = UserMailer.create_signup("jojo@yahoo.com", "Jojo Binks")
+email.must deliver_to("jojo@yahoo.com")
+Or, you can use the matcher as an expectation:
+
+email = UserMailer.create_signup "jojo@yahoo.com", "Jojo Binks"
+email.must_deliver_to "jojo@yahoo.com"
+And of course you can use the matcher as an assertion:
+
+email = UserMailer.create_signup "jojo@yahoo.com", "Jojo Binks"
+assert_must deliver_to("jojo@yahoo.com"), email
