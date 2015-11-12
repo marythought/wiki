@@ -5,6 +5,7 @@ require "minitest/rails"
 require "minitest/rails/capybara"
 require "minitest/pride"
 require "minitest/reporters"
+require "email_spec"
 
 Minitest::Reporters.use! # Minitest::Reporters::SpecReporter.new
 
@@ -16,6 +17,11 @@ end
 
 class ActionController::TestCase
   include Devise::TestHelpers
+end
+
+class MiniTest::Unit::TestCase
+  include EmailSpec::Helpers
+  include EmailSpec::Matchers
 end
 
 def sign_in(role = :editor)

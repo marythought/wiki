@@ -3,10 +3,15 @@
 By [Mary Dickson](http://www.marydickson.com).
 
 ## Description
-**Wiki** A neighborhood wiki Rails app showcasing has_many_and_belongs_to_many relationships. Uses Devise for log_in features and tracks wiki contributors who add or edit wiki topics.
+**Wiki** A neighborhood wiki Rails app showcasing has_many_and_belongs_to_many relationships.
+* Uses Devise for log_in features and tracks wiki contributors who add or edit wiki topics.
+* Uses Fabricate and Faker to seed database
 
 ## Usage
 Run `rake test` to test.
+
+## TODOS
+* Add mailer
 
 ## Authors
 
